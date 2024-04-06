@@ -2,6 +2,32 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    List<int> months = new List<int>()
+    {
+        31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+    };
+
+    string getNumberOfDay()
+    {
+        int month = DateTime.Now.Month - 1;
+        int day = DateTime.Now.Day;
+        int days = 0;
+        for (int i = 0; i < month; i++)
+        {
+            days += months[i];
+        }
+        days += day;
+        return days.ToString();
+    }
+
+    string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    char getRandomChar()
+    {
+        Random rnd = new Random();
+        int index = rnd.Next(0, chars.Length - 1);
+        return chars[index];
+    }
 }
 
 <div class="text-center">
@@ -9,4 +35,12 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<h1>Hello</h1>
+<h1>Ex 1</h1>
+
+<h4>@getNumberOfDay()</h4>
+
+<h2></h2>
+
+<h1>Ex 2</h1>
+
+<h4>@getRandomChar()</h4>

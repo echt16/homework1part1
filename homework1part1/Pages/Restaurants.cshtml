@@ -1,0 +1,27 @@
+﻿@page
+@model homework1part1.Pages.RestaurantsModel
+@{
+    List<string> restaurants = new List<string>()
+    {
+    "restaurant1",
+    "restaurant2",
+    "restaurant3",
+    "restaurant4",
+    "restaurant5",
+    };
+
+}
+
+<style>
+    ul li{
+        padding: 30px 10px;
+        color:red;
+    }
+</style>
+
+<ul>
+    @for (int i = 0; i < restaurants.Count; i++)
+    {
+        <li>@restaurants[i]</li>
+    }
+</ul>

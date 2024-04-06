@@ -1,0 +1,47 @@
+﻿@page
+@model RestaurantModel
+@{
+    ViewData["Title"] = "Restaurant";
+}
+
+<div class="restaurant-container">
+    <h2>My restaurant</h2>
+    <div class="menu">
+        <table>
+            <tr>
+                <th>Dish</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Fish</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>Pancakes</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Breakfest</td>
+                <td>30</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+<style>
+    .restaurant-container {
+        width: 100%;
+    }
+
+        .restaurant-container .menu table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+            .restaurant-container .menu table tr td, .restaurant-container .menu table tr td {
+                border: 1px solid pink;
+            }
+
+</style>

@@ -1,0 +1,34 @@
+﻿@page
+@model homework1part1.Pages.CountriesModel
+@{
+    Dictionary<string, string> dict = new Dictionary<string, string>();
+    dict.Add("Ukraine", "Kijiv");
+    dict.Add("USA", "New York");
+    dict.Add("Germany", "Berlin");
+    dict.Add("France", "Paris");
+}
+
+<style>
+    #country-table{
+        border-collapse:collapse;
+    }
+
+    #country-table td{
+        width:300px;
+        border: 1px solid black;
+    }
+</style>
+
+<table id="country-table">
+    <tr>
+        <th>Country</th>
+        <th>Capital</th>
+    </tr>
+    @foreach(var item in dict)
+    {
+        <tr>
+            <td>@item.Key</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+</table>
